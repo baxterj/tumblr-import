@@ -1,0 +1,12 @@
+.posts-container {
+    margin:30px;
+}
+.post-footer{
+    display: none;
+}
+.description{
+    display: none;
+}
+.post-body {
+    margin:0 0 20px 0;
+}
