@@ -66,10 +66,6 @@
 					posts = $('#posts'),
 					postsContainer = $("#posts-container");
 
-				posts.masonry( 'on', 'layoutComplete', function( msnryInstance, laidOutItems ) {
-					postsContainer.css("height", data.posts.outerHeight())
-				});
-
 				// If the plugin hasn't been initialized yet
 				if ( ! data ) {
 					if ( options ) { 
@@ -150,6 +146,9 @@
 					data.posts.imagesLoaded(function() {
 						data.posts.masonry(data.masonrysettings);
 						data.postsContainer.css("height", data.posts.outerHeight())
+						data.posts.masonry( 'on', 'layoutComplete', function( msnryInstance, laidOutItems ) {
+							data.postsContainer.css("height", data.posts.outerHeight())
+						});
 					})
 				}
 			});
