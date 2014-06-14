@@ -63,7 +63,8 @@
 				// If options exist, lets merge them with our default settings
 				var $this = $(this),
 					data = $this.data('tumblr'),
-					posts = $('#posts');
+					posts = $('#posts'),
+					postsContainer = $("#posts-container");
 
 				// If the plugin hasn't been initialized yet
 				if ( ! data ) {
@@ -87,6 +88,7 @@
 						start            : settings.start,
 						options          : settings,
 						posts            : posts,
+						postsContainer   : postsContainer,
 						pagination_setup : false,
 						masonrysettings : masonryopts
 					});
@@ -143,6 +145,7 @@
 					data.posts.masonry('destroy');
 					data.posts.imagesLoaded(function() {
 						data.posts.masonry(data.masonrysettings);
+						data.postsContainer.css("height", data.posts.outerHeight())
 					})
 				}
 			});
