@@ -149,6 +149,7 @@
 					data.posts.masonry('destroy');
 					data.posts.imagesLoaded(function() {
 						data.posts.masonry(data.masonrysettings);
+						data.postsContainer.css("height", data.posts.outerHeight())
 					})
 				}
 			});
