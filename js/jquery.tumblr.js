@@ -38,7 +38,8 @@
 			var masonryopts = {
 				"itemSelector":'.item',
 				"columnWidth": 200,
-				"gutter": 10
+				"gutter": 10,
+				"isFitWidth": true
 			};
 
 			var settings = {
